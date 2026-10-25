@@ -1,113 +1,49 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main(){
   runApp(MyApp());
 }
-class MyApp extends StatefulWidget{
+class MyApp extends StatelessWidget{
   const MyApp ({super.key});
 
-  @override
-  State<MyApp> createState() => _MyAppState ();
-    
-  }
-  class _MyAppState extends State<MyApp>{
-    final TextEditingController emailController =TextEditingController();
-    final TextEditingController passwordController=TextEditingController();
-     bool showPassword = false;
-    int number=1;
-
-    @override
-    void initState(){
-      super.initState();
-
-      print('Hello to flutter BS IT');
-    }
-
-    @override
-    void dispose(){
-      super.dispose();
-    }
-  
-  @override
-  Widget build(BuildContext context) {
+@override
+Widget build( BuildContext context){
   return MaterialApp(
-    home:Scaffold(
+    home: Scaffold(
       appBar: AppBar(
         title: Text("BS IT"),
-        centerTitle: true,
       ),
-      body:Container(
-        width:double.infinity,
-        height: double.infinity,
-        decoration: BoxDecoration(
-gradient:LinearGradient(colors: [
-  Colors.redAccent, Colors.amber
-]
-)
-        ),
-        child:Padding (
-          padding: const EdgeInsets.all(24.0),
-          child:Column(
+      
+        body: Column(
           children:[
-         Text('Welcome Back' ,
-         style: TextStyle(
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
-          fontSize: 40,
-         ),
-         ),
-         SizedBox(
-          height:20,
-         ),
-        
-         TextField(
-          controller: emailController,
-          decoration: InputDecoration(
-          border:OutlineInputBorder(),
-          prefixIcon:Icon(Icons.email),
-          hintText: 'Enter Email',
-           ),
-          ),
-    
-TextField(
-  controller: passwordController,
-  obscureText: showPassword,
-  decoration: InputDecoration(
-    border:OutlineInputBorder(),
-    prefixIcon: Icon(Icons.password),
-    suffixIcon:IconButton(onPressed: (){
-setState(() {
-  showPassword=!showPassword;
-});
-    },
-     icon: Icon(Icons.remove_red_eye)),
+            Stack(
+              children: [
+                Container(
+                  color: Colors.black,
+                  width: double. infinity,
+                  height: 150,
+                ),
+              Positioned(
+                bottom: 10,
+                right: 10,
+                child: Text('My Profile', style: TextStyle(
+                  color: Colors.white,
+                ),)
+              )
+
+              ],
   
 
-          ),
-         ),
-         SizedBox(height:20),
-         ElevatedButton(onPressed: (){
-          print(emailController.text);
-          print(passwordController.text);
-         }, child: Text('Login') 
-         ),
 
-Text('12'),
-         ElevatedButton(
-          onPressed: (){
-            setState(() {
-              
-              number++;
-            });
-         }, 
-         child: Text( 'Increment')
-         )
-          ],
       ),
+      Row(children: [
+        Expanded(child: Container(height:60, color:CupertinoColors.activeBlue),),
+        Expanded( child:Container( height:60,color:Colors.deepOrange) ,),
+      ],)
+        ]
     ),
-  ),
     ),
-    );
-  }
+  );
 }
-
+}
