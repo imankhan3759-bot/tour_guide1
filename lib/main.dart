@@ -15,35 +15,34 @@ Widget build( BuildContext context){
         title: Text("BS IT"),
       ),
       
-        body: Column(
-          children:[
-            Stack(
+        body: Row(
+          children:
+          [
+            Expanded( 
+              flex :1,
+              child:Column(
+                children:[
+                  Expanded(child: Container( color:Colors.red),),
+                  Expanded( flex:3, child:Container( color:Colors.green) ,),
+                  Expanded(child:Container(color:Colors.lightGreen),)
+                ],
+              ),
+            ),
+            Expanded(
+            flex :1,
+            child:Column(
               children: [
-                Container(
-                  color: Colors.black,
-                  width: double. infinity,
-                  height: 150,
-                ),
-              Positioned(
-                bottom: 10,
-                right: 10,
-                child: Text('My Profile', style: TextStyle(
-                  color: Colors.white,
-                ),)
-              )
-
+                Expanded(child: Container( color:Colors.blue)),
+                Expanded(child:Container(color:Colors.black)),
+                Expanded(child:Container(color:Colors.deepOrange)),
+                Expanded(child:Container(color:Colors.purple)),
               ],
-  
+            ),
+          ),
+          ],
+        ),
+),
 
-
-      ),
-      Row(children: [
-        Expanded(child: Container(height:60, color:CupertinoColors.activeBlue),),
-        Expanded( child:Container( height:60,color:Colors.deepOrange) ,),
-      ],)
-        ]
-    ),
-    ),
-  );
+);
 }
 }
