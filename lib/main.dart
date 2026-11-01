@@ -51,7 +51,16 @@ Colors.greenAccent,
           )
         ),
         ),
-        TextButton(onPressed: (){}, child: Text("unread")),
+       TextButton (onPressed: (){}, child: Text("unread")),
+        Row(
+          children:[
+                  TextButton (onPressed: (){}, child: Text("unread")),
+                  TextButton (onPressed: (){}, child: Text("communities")),
+                  TextButton (onPressed: (){}, child: Text("ali")),
+                  TextButton (onPressed: (){}, child: Text("favourites")),
+                  TextButton (onPressed: (){}, child: Text("group"),),
+          ],
+        ),
         Expanded(
        child: ListView.builder(
         itemCount: students.length,
